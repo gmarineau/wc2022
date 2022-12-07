@@ -51,19 +51,19 @@ const showStats = ref(false);
                         <div :class="[showStats ? 'h-12' : 'h-0']" class="transition-height duration-200 ease-in-out origin-top overflow-hidden">
                             <div class="py-1 flex items-center justify-around bg-wc-lightest border-wc-lighter overflow-hidden">
                                 <div class="flex flex-col">
-                                    <div class="flex justify-center font-bold">{{ user.stats.exact_score.length }}</div>
+                                    <div class="flex justify-center font-bold" v-if="user.stats.exact_score">{{ user.stats.exact_score.length }}</div>
                                     <div class="flex justify-center tracking-tight uppercase text-xs">Exact Score</div>
                                 </div>
                                 <div class="flex flex-col">
-                                    <div class="flex justify-center font-bold">{{ user.stats.goal_difference.length }}</div>
+                                    <div class="flex justify-center font-bold" v-if="user.stats.goal_difference">{{ user.stats.goal_difference.length }}</div>
                                     <div class="flex justify-center tracking-tight uppercase text-xs">Goal Difference</div>
                                 </div>
                                 <div class="flex flex-col">
-                                    <div class="flex justify-center font-bold">{{ user.stats.winner.length }}</div>
+                                    <div class="flex justify-center font-bold" v-if="user.stats.winner">{{ user.stats.winner.length }}</div>
                                     <div class="flex justify-center tracking-tight uppercase text-xs">Winner</div>
                                 </div>
                                 <div class="flex flex-col">
-                                    <div class="flex justify-center font-bold">{{ user.stats.loser.length }}</div>
+                                    <div class="flex justify-center font-bold" v-if="user.stats.loser">{{ user.stats.loser.length }}</div>
                                     <div class="flex justify-center tracking-tight uppercase text-xs">Loser</div>
                                 </div>
                             </div>
